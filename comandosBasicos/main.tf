@@ -7,13 +7,6 @@ terraform {
   }
 }
 
-variable "rg_nombre" {
-  description = "Nombre del grupo de recursos"
-  type        = string
-  default     = "miPrimerCommit"
-  
-}
-
 provider "azurerm" {
   features {}
   subscription_id = "b78ef683-1636-436a-aab6-991a8a1376d2"
@@ -22,4 +15,14 @@ provider "azurerm" {
 resource "azurerm_resource_group" "rg" {
   location = "brazilsouth"
   name = var.rg_nombre
+}
+
+resource "azurerm_resource_group" "rg2" {
+  location = "brazilsouth"
+  name = var.rg_nombre2
+}
+
+resource "azurerm_resource_group" "rg3" {
+  location = "brazilsouth"
+  name = var.rg_nombre3
 }
